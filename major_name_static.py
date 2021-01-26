@@ -1,6 +1,7 @@
 
 import pandas as pd
 import re
+import json
 
 def sort_major(x):
     new_x = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
@@ -45,7 +46,7 @@ def load_post_list(file_path):
 
     sorted_major_count = {k: v for k, v in sorted(major_count.items(), key=lambda item: item[1], reverse=1)}
 
-    print(sorted_major_count)
+    print(json.dumps(sorted_major_count))
     return sorted_major_count
 
 # def save_result()
